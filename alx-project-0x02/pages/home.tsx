@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "../components/common/Card";
 import PostModal from "../components/common/PostModal";
+import Header from "../components/layout/Header";
 
 interface Post {
   title: string;
@@ -21,27 +22,30 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen gap-6 p-4">
-      <h1 className="text-4xl font-bold">Home Page</h1>
-      <button
-        onClick={() => setIsModalOpen(true)}
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Add Post
-      </button>
+    <>
+      <Header />
+      <main className="flex flex-col items-center justify-center min-h-screen gap-6 p-4">
+        <h1 className="text-4xl font-bold">Home Page</h1>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Add Post
+        </button>
 
-      <div className="flex flex-wrap gap-4 justify-center mt-6">
-        {posts.map((post, index) => (
-          <Card key={index} title={post.title} content={post.content} />
-        ))}
-      </div>
+        <div className="flex flex-wrap gap-4 justify-center mt-6">
+          {posts.map((post, index) => (
+            <Card key={index} title={post.title} content={post.content} />
+          ))}
+        </div>
 
-      <PostModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onAddPost={handleAddPost}
-      />
-    </main>
+        <PostModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onAddPost={handleAddPost}
+        />
+      </main>
+    </>
   );
 }
 
