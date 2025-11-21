@@ -8,7 +8,6 @@ export interface CardProps {
   content: string;
 }
 
-// interfaces/index.ts
 
 export interface ButtonProps {
   size?: "small" | "medium" | "large";
@@ -17,7 +16,12 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-// interfaces/index.ts
+export interface PostProps {
+  title: string;
+  content: string;
+  userId: number;
+}
+
 
 export interface UserProps {
   name: string;
