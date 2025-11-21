@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Card from "../components/common/Card";
 import PostModal from "../components/common/PostModal";
@@ -24,6 +25,10 @@ export default function Home() {
   return (
     <>
       <Header />
+      <section className="p-6">
+        <h1 className="text-3xl font-bold">Home Page</h1>
+        <p>Welcome to the Home Page!</p>
+      </section>
       <main className="flex flex-col items-center justify-center min-h-screen gap-6 p-4">
         <h1 className="text-4xl font-bold">Home Page</h1>
         <button
@@ -44,6 +49,8 @@ export default function Home() {
           onClose={() => setIsModalOpen(false)}
           onAddPost={handleAddPost}
         />
+
+        
       </main>
     </>
   );
