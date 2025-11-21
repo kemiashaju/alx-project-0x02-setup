@@ -9,7 +9,7 @@ interface Post {
   content: string;
 }
 
-export default function Home() {
+export default function HomePage() {
   const [posts, setPosts] = useState<Post[]>([
     { title: "Hello", content: "This is card 1" },
     { title: "Welcome", content: "This is card 2" },
